@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BookStore23.Models.Author>
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Index</h2>
+<p>
+    <a asp-action="create New"></a>
+
+</p>
+<table class=" table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=> model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.FullName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(modelItem=>item.id)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(modelItem=>item.FullName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit","Edit",new {/*id=Item.primaryKey*/})
+                    @Html.ActionLink("Details", "Details", new {/*id=Item.primaryKey*/})
+                    @Html.ActionLink("Delete", "Delete", new {/*id=Item.primaryKey*/})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
